@@ -35,10 +35,6 @@ public class SubjectService {
 
     public SubjectDto getSubject(Integer id) {
         SubjectEntity subjectEntity = subjectRepository.findById(id).orElseThrow(EntityNotFoundException::new);
-//        if (!subjectRepository.existsById(id)){  dělá to samé co kod výše
-//            throw new EntityNotFoundException();
-//        }
-//        StudentEntity studentEntity = studentRepository.getReferenceById(id);
         return subjectMapper.toDto(subjectEntity);
     }
 
